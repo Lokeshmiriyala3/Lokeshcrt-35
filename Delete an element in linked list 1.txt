@@ -1,0 +1,42 @@
+Delete an element in linked list 1
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Single:
+    
+    def __init__(self):
+        self.head=self.tail=None
+    def create(self,data):
+        n=Node(data)
+        if self.head==None:
+            self.head=self.tail=n
+        else:
+            self.tail.next=n
+            self.tail=n
+    def deleteFirst(self):
+        if self.head==None:
+            return
+        else:
+            self.head=self.head.next
+    def show(self):
+        if self.head==None:
+            return
+        else:
+            temp=self.head
+            while(temp!=None):
+                print(temp.data)
+                temp=temp.next
+o=Single()
+while True:
+    a=int(input())
+    if a<0:
+        break
+    else:
+        o.create(a)
+o.deleteFirst()
+o.show()
+    
+
+            
+        
