@@ -1,0 +1,35 @@
+Insert an element in linked list 1
+
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class single:
+    def __init__(self):
+        self.head=self.tail=None
+    def create(self,data):
+        n=Node(data)
+        if self.head==None:
+            self.head=self.tail=n
+        else:
+            self.tail.next=n
+            self.tail=n
+    def show(self):
+        if self.head==None:
+            return
+        temp=self.head
+        while(temp!=None):
+            print(temp.data)
+            temp=temp.next
+
+o = single()
+
+while True:
+    a=int(input())
+    if a<0:
+        break
+    else:
+        o.create(a)
+o.show()
+            
+            
