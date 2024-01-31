@@ -1,4 +1,4 @@
-Creation,Insertion and Displaying the BinarySearch Tree
+Creation,Insertion,search and Displaying node in the BinarySearch Tree
 class Node:
     def __init__(self,x):
         self.data=x
@@ -23,11 +23,25 @@ class Node:
             self.left.show()
         print(self.data,end=" ")
         if self.right:
-            self.right.show()           
+            self.right.show()   
+    def search(self,y):
+        if self.data==y:
+            print("node is present")
+            return
+        if self.data>y:
+            if self.left :
+                self.left.search(y)
+            else:
+                print("not present")
+        else:
+            if self.right :
+                self.right.search(y)
+            else:
+                print("not found")
 root=Node(40)
 while True:
     print()
-    print("1.Insert\n2.show\n3.exit")
+    print("1.Insert\n2.show\n3.search\n4.exit")
     ch=int(input("enter the choice"))
     if ch==1:
         x=int(input("enter the element"))
@@ -35,6 +49,9 @@ while True:
     elif ch==2:
         root.show()
     elif ch==3:
+        y=int(input("enter element"))
+        root.search(y)
+    elif ch==4:
         break
     else:
         print("invalid")
