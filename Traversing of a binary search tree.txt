@@ -1,0 +1,55 @@
+Traversing of a binary search tree
+
+ class Node:
+        def __init__(self,x):
+            self.data=x
+            self.left=None
+            self.right=None
+        def insert(self,x):
+            if self.data==None:
+                self.data=x
+                return
+            if self.data>x:
+                if self.left is None:
+                    self.left=Node(x)
+                else:
+                    self.left.insert(x)
+            else:
+                if self.right is None:
+                    self.right=Node(x)
+                else:
+                    self.right.insert(x)
+        def preorder(self):
+            print(self.data,end=" ")
+            if self.left:
+                self.left.preorder()
+            if self.right:
+                self.right.preorder()
+        def inorder(self):
+            if self.left:
+                self.left.inorder()
+            print(self.data,end=" ")
+            if self.right:
+                self.right.inorder()
+        def postorder(self):
+            if self.left:
+                self.left.postorder()
+            if self.right:
+                self.right.postorder()
+            print(self.data,end=" ")
+root=Node(30)
+while True:
+    print()
+    print("1.Insert\n2.pre-order\n3.In-order\n4.Post-order\n5.exit")
+    ch=int(input("enter the choice"))
+    if ch==1:
+        x=int(input("enter the element"))
+        root.insert(x)
+    if ch==2:
+        root.preorder()
+    if ch==4:
+        root.postorder
+    if ch==3:
+        root.inorder()
+    if ch==5:
+        break
