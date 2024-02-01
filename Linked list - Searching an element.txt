@@ -1,0 +1,39 @@
+Linked list - Searching an element
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class single:
+    def __init__(self):
+        self.head=self.tail=None
+    def create(self,data):
+        n=Node(data)
+        if self.head==None:
+            self.head=self.tail=n
+        else:
+            self.tail.next =n
+            self.tail=n
+    def show(self,ele):
+        if self.head==None:
+            print(f"{ele} not present in the list")
+        else:
+            temp=self.head
+            d=False
+            while(temp!=None):
+                if temp.data==ele:
+                    d=True
+                temp=temp.next
+            if d==True:
+                print(f"{ele} is present in the list")
+            else:
+                print(f"{ele} not present in the list")
+o=single()
+while True:
+    a=int(input())
+    if a<0:
+        break
+    else:
+        o.create(a)
+ele=int(input())
+o.show(ele)
+                
