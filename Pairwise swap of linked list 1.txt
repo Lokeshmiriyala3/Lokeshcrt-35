@@ -1,0 +1,36 @@
+Pairwise swap of linked list 1
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Linkedlist:
+    def  __init__(self):
+        self.head=self.tail=None
+    def create(self,data):
+        x=Node(data)
+        if self.head==None:
+            self.head=self.tail=x
+        else:
+            self.tail.next=x
+            self.tail=x
+    def pairwise(self):
+        temp=self.head
+        while temp!=None and temp.next!=None:
+            temp.data,temp.next.data=temp.next.data,temp.data
+            temp=temp.next.next if temp.next is not None else temp.next
+    def show(self):
+        temp1=self.head
+        while(temp1!=None):
+            print(temp1.data,end="\n")
+            temp1=temp1.next
+o=Linkedlist()
+while(True):
+    d=int(input())
+    if(d<0):
+        break
+    else:
+        o.create(d)
+o.pairwise()
+o.show()
+        
+    
