@@ -1,0 +1,67 @@
+Merge two sorted Lists 3
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class Single:
+    def __init__(self):
+        self.head = None
+
+    def create(self, data):
+        x = Node(data)
+        if self.head is None:
+            self.head = x
+        else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next
+            temp.next = x
+
+    def merge(self, list1, list2):
+        dummy = Node(0)
+        current = dummy
+
+        while list1 is not None and list2 is not None:
+            if list1.data <= list2.data:
+                current.next = list1
+                list1 = list1.next
+            else:
+                current.next = list2
+                list2 = list2.next
+
+            current = current.next
+
+        if list1 is not None:
+            current.next = list1
+        elif list2 is not None:
+            current.next = list2
+
+        self.head = dummy.next
+
+    def show(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.data, end=" ")
+            temp = temp.next
+
+# Input for the first list
+o1 = Single()
+num = int(input())
+values = list(map(int, input().split()))
+for value in values:
+    o1.create(value)
+
+# Input for the second list
+o2 = Single()
+num = int(input())
+values = list(map(int, input().split()))
+for value in values:
+    o2.create(value)
+
+# Merge the two lists
+o3 = Single()
+o3.merge(o1.head, o2.head)
+
+# Display the merged list
+o3.show()
