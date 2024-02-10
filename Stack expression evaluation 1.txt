@@ -1,0 +1,24 @@
+Stack expression evaluation 1
+x=input()
+l1=[]
+j=0
+for i in x:
+    if i.isdigit():
+        l1.append(int(i))
+    else:
+        if i=="+":
+            j=l1.pop()+l1.pop()
+            l1.append(j)
+        elif i=="-":
+            j=l1.pop()-l1.pop()
+            l1.append(j)
+        elif i=="*":
+            j=l1.pop()*l1.pop()
+            l1.append(j)
+        elif i=="/":
+            j=l1.pop()/l1.pop()
+            l1.append(j)
+print(int(abs(j)))
+            
+            
+        
