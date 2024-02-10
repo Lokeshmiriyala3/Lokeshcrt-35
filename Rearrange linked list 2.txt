@@ -1,0 +1,46 @@
+Rearrange linked list 2
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.prev=None
+        self.next = None
+class Double:
+    def __init__(self):
+        self.head =self.tail= None
+
+    def create(self, data):
+        x = Node(data)
+        if self.head is None:
+            self.head=self.tail= x
+        else:
+            self.tail.next=x
+            x.prev=self.tail
+            self.tail=x
+    def show(self):
+        temp1=self.head
+        temp2=self.tail
+        d=1
+        while temp1.next!=None and temp2.prev!=None and d<t/2:
+            d+=1
+            print(temp1.data,end="\n")
+            print(temp2.data,end="\n")
+            temp1=temp1.next
+            temp2=temp2.prev
+            if temp1.data==temp2.data:
+                print(temp1.data)
+            
+            
+o=Double()
+t=0
+while True:
+    x=int(input())
+    t+=1
+    if x<0:
+        
+        break
+    else:
+        o.create(x)
+o.show()
+            
+          
+
