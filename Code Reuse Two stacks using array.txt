@@ -1,0 +1,38 @@
+Code Reuse: Two stacks using array
+n1=int(input())
+Stack1=list(map(int,input().split(" ")))[:n1]
+n2=int(input())
+Stack2=list(map(int,input().split(" ")))[:n2]
+n3=int(input())
+n4=int(input())
+print("Stack 1 Elements:")
+for i in range(len(Stack1)-1,-1,-1):
+    print(Stack1[i],end=" ")
+print()
+print("Stack 2 Elements:")
+for i in range(len(Stack2)-1,-1,-1):
+    print(Stack2[i],end=" ")
+print()
+if n3>len(Stack1):
+    print("Stack underflow. pop from stack 1 failed")
+    print("Stack 1 Elements:")
+else:
+    print("Stack 1 Elements:")
+    n=len(Stack1)
+    
+    for i in range((n-n3)-1,-1,-1):
+        print(Stack1[i],end=" ")
+print()
+if n4>len(Stack2):
+    print("Stack underflow. pop from  stack 2 failed")
+else:
+    print("Stack 2 Elements:")
+    n=len(Stack2)
+    for i in range((n-n4)-1,-1,-1):
+        print(Stack2[i],end=" ")
+    
+
+    
+        
+        
+    
