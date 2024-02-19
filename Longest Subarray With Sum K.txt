@@ -1,4 +1,4 @@
-Longest Subarray with given Sum K(Positives)
+Kadane’s Algorithm : Maximum Subarray Sum in an Array
 public class Solution {
     public static int longestSubarrayWithSumK(int []a, long k) {
         int left=0;
